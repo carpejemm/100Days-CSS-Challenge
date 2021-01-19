@@ -1,3 +1,124 @@
-* {
-	background-color: pink;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body {
+  background: #323232;
+}
+
+.frame {
+	color: #323232;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	overflow: hidden;
+	background: transparent;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+#modal {
+	background: #fff;
+	border-radius: 4px;
+	width: 280px;
+	height: 210px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 3px 10px 13px rgba(0, 0, 0, 0.45);
+	overflow: hidden;
+}
+
+.center {
+	animation: spring 750ms ease forwards;
+	will-change: transform;
+}
+
+.hide {
+	animation: reversed-spring 750ms ease forwards;
+	will-change: transform;
+}
+
+img {
+  	margin-top: 24px;
+}
+
+span {
+	display: block;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+p {
+	padding: 0 38px;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: center;
+	line-height: 20px;
+	margin: 0;
+}
+
+button {
+	background: #F65656;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 300;
+	width: 100%;
+	padding: 12px;
+	border: 0;
+	letter-spacing: 0.5px;
+	cursor: pointer;
+}
+
+button:focus {
+  	outline: 0;
+}
+
+button:hover {
+	background: red;
+	transition: 500ms;
+}
+
+@keyframes spring {
+	0% { 
+		transform: translate(-50%, -50%) scale3d(0, 0, 1); 
+	}
+	25% { 
+	  	transform: translate(-50%, -50%) scale3d(1.1, 1.1, 1); 
+	}
+	50% {
+	   transform: translate(-50%, -50%) scale3d(0.8, 0.8, 1); 
+	}
+	75% {
+	   transform: translate(-50%, -50%) scale3d(1.05, 1.05, 1); 
+	}
+	100% {
+	   transform: translate(-50%, -50%) scale3d(1, 1, 1); 
+	}
+}
+
+@keyframes reversed-spring {
+	0% {
+		transform: translate(-50%, -50%) scale3d(1, 1, 1);
+	}
+	25% { 
+		transform: translate(-50%, -50%) scale3d(1.1, 1.1, 1);
+	}
+  	50% { 
+  		transform: translate(-50%, -50%) scale3d(0.8, 0.8, 1); 
+  	}
+  	75% { 
+  		transform: translate(-50%, -50%) scale3d(0.9, 0.9, 1); 
+  	}
+  	100% { 
+  		transform: translate(-50%, -50%) scale3d(0, 0, 1); 
+  	} 
 }
